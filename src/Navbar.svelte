@@ -1,3 +1,3 @@
 <div class="navbar bg-primary">
-<h1>Player Scoreboard</h1>
+<h1>Husky - Svelte - Player Score</h1>
 </div>
