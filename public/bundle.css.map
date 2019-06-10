@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "..\\src\\Player.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\r\n    import {createEventDispatcher} from 'svelte';\r\n\r\n    const dispatch = createEventDispatcher();\r\n\r\n\texport let name;\r\n\texport let points;\r\n\tlet showControls = false;\r\n\r\n\tconst addPoint = ()=>{points ++};\r\n\tconst removePoint = ()=>{points --};\r\n    const toggleControls = ()=>{showControls = !showControls};\r\n    const onDelete = () => dispatch(\"removeplayer\",name)\r\n</script>\r\n\r\n<style>\r\n\th1 {\r\n\t\tcolor: #204f6e;\r\n\t}\r\n\th3{\r\n\t\tmargin-bottom: 10px;\r\n\t}\r\n</style>\r\n\r\n\t<div class=\"card\">\r\n\t\t<h1>\r\n\t\t{name}\r\n\t\t<button class=\"btn btn-sm\" on:click={toggleControls}>\r\n\t\t{#if showControls}-{:else}+{/if}\r\n\t\t</button>\r\n        <button class=\"btn btn-danger btn-sm\" on:click={onDelete}>x</button>\r\n\t\t</h1>\r\n\t\t<h3>{points}</h3>\r\n\t\t{#if showControls}\r\n\t\t\t<button class=\"btn\" on:click={addPoint}>+1</button>\r\n\t\t\t<button class=\"btn btn-dark\" on:click={removePoint}>-1</button>\r\n\t\t\t<input type=\"number\" bind:value={points} />\r\n\t\t{/if}\r\n\t</div>\r\n\r\n\r\n"
+  ],
+  "names": [],
+  "mappings": "AAgBC,EAAE,cAAC,CAAC,AACH,KAAK,CAAE,OAAO,AACf,CAAC,AACD,gBAAE,CAAC,AACF,aAAa,CAAE,IAAI,AACpB,CAAC"
+}
